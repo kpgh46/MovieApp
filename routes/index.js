@@ -1,9 +1,11 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+let movieController = require("../controllers/movieController");
+let directorController = require("../controllers/directorController");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get("/", movieController.testFunction);
+
+router.get("/test", directorController.directorTest);
 
 module.exports = router;
