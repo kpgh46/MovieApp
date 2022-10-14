@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Movie = require("../models/movie");
 
-exports.testFunction = (req, res, next) => {
+exports.movieList = (req, res, next) => {
 	Movie.find({}).exec((err, results) => {
 		if (err) {
 			return next(err);
@@ -9,6 +9,20 @@ exports.testFunction = (req, res, next) => {
 		res.render("index", {
 			title: "List of Movies",
 			movie_list: results,
+		});
+	});
+};
+
+exports.movieDetail = (req, res, next) => {
+	let id = req.params.id;
+
+	Movie.findById(id).exec((err, results) => {
+		if (err) {
+			return next(err);
+		}
+
+		res.render("movie_detail", {
+			movie_detail: results,
 		});
 	});
 };
