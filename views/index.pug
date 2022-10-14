@@ -3,5 +3,14 @@ extends layout
 block content
   h1= title
   p  #{title}
-  a(href = '/test') click
+  
+  ul
+    each movie in movie_list
+      li
+        a(href=movie.url) #{movie.title} 
+        |  (#{movie.year_made})
+  
+    else
+      li There are no books.
+
   

@@ -9,7 +9,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 const mongoDB =
-	"mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wdeinur.mongodb.net/?retryWrites=true&w=majority";
+	"mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wdeinur.mongodb.net/movie_database?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
