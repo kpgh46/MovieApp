@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+
+  form(action="" method= "POST")
+    div.form-group
+      label(for = "title") Title: 
+      input#title.form-control(for = "title" name = "title" type="text")
+      
+      label(for = "director") Director: 
+      input.form-control( id = "director" for = "director" name = "director" type = "text")
+      
+      label(for="year") Year Made:
+      input.form-control(id = "year" for = "year" name = "year" type = "text")
+
+      label(for = "summary") Summary:
+      input.form-control(id = "summary" for  = "summary" name = "summary" type = "textarea")
+      br
+      button.btn.btn-primary(type='submit') Submit
+
+
+  

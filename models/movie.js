@@ -25,7 +25,7 @@ let MovieSchema = new Schema({
 });
 
 MovieSchema.virtual("url").get(function () {
-	return `/${this._id}`;
+	return `/detail/${this._id}`;
 });
 
 module.exports = mongoose.model("Movie", MovieSchema);
