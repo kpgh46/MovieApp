@@ -6,16 +6,16 @@ block content
   form(action="" method= "POST")
     div.form-group
       label(for = "title") Title: 
-      input#title.form-control(for = "title" name = "title" type="text")
+      input#title.form-control(for = "title" name = "title" type="text" value=(undefined===movie ? '' : movie.title))
       
       label(for = "director") Director: 
-      input.form-control( id = "director" for = "director" name = "director" type = "text")
+      input.form-control( id = "director" for = "director" name = "director" type = "text" value=(undefined===movie ? '' : movie.director))
       
       label(for="year") Year Made:
-      input.form-control(id = "year" for = "year" name = "year" type = "text")
+      input.form-control(id = "year" for = "year" name = "year" type = "text" value=(undefined===movie ? '' : movie.year_made))
 
       label(for = "summary") Summary:
-      input.form-control(id = "summary" for  = "summary" name = "summary" type = "textarea")
+      input.form-control(id = "summary" for  = "summary" name = "summary" type = "textarea" value=(undefined===movie ? '' : movie.summary))
       br
       button.btn.btn-primary(type='submit') Submit
 

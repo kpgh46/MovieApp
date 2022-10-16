@@ -35,16 +35,17 @@ exports.movie_create_get = (req, res, next) => {
 };
 
 exports.movie_create_post = [
+	//first sanitize and validate
 	body("title", "Must include title").trim().isLength({ min: 1 }).escape(),
-	body("director", "must include director")
+	body("director", "Must include director")
 		.trim()
 		.isLength({ min: 1 })
 		.escape(),
-	body("year", "Must include year")
+	body("year", "Year must include year")
 		.trim()
 		.isLength({ min: 4, max: 4 })
 		.isNumeric()
-		.withMessage("Must be 4 digit number")
+		.withMessage("Year must be 4 digit number")
 		.escape(),
 	body("summary", "Please include Summary")
 		.trim()
@@ -52,8 +53,10 @@ exports.movie_create_post = [
 		.escape(),
 
 	(req, res, next) => {
+		//grab the errors with built in validation
 		const errors = validationResult(req);
 
+		//create object from Movie model
 		let movie = new Movie({
 			title: req.body.title,
 			director: req.body.director,
@@ -61,19 +64,21 @@ exports.movie_create_post = [
 			summary: req.body.summary,
 		});
 
+		//if errors, render page with error messages
 		if (!errors.isEmpty()) {
 			res.render("movie_add", {
 				title: "Add Author",
 				errors: errors.array(),
+				movie: movie,
 			});
 			return;
 		}
-
+		//if no errors, save to database and render new movie detail page
 		movie.save((err) => {
 			if (err) {
 				return next(err);
 			}
-			res.redirect(book.url);
+			res.redirect(movie.url);
 		});
 	},
 ];
