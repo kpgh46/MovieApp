@@ -9,8 +9,7 @@ let MovieSchema = new Schema({
 	},
 
 	director: {
-		first_name: String,
-		last_name: String,
+		type: String,
 	},
 	year_made: {
 		type: String,
