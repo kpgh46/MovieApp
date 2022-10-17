@@ -11,6 +11,9 @@ let MovieSchema = new Schema({
 	director: {
 		type: String,
 	},
+	category: {
+		type: String,
+	},
 	year_made: {
 		type: String,
 		maxLength: 4,

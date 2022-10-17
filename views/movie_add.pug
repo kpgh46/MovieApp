@@ -11,6 +11,9 @@ block content
       label(for = "director") Director: 
       input.form-control( id = "director" for = "director" name = "director" type = "text" value=(undefined===movie ? '' : movie.director))
       
+      label(for = "category") Category: 
+      input.form-control( id = "category" for = "category" name = "category" type = "text" value=(undefined===movie ? '' : movie.category))
+      
       label(for="year") Year Made:
       input.form-control(id = "year" for = "year" name = "year" type = "text" value=(undefined===movie ? '' : movie.year_made))
 

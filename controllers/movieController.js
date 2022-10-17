@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Movie = require("../models/movie");
 const { body, validationResult } = require("express-validator");
+const capitalizeFirstLetter = require("../helper").capitalizeFirstLetter;
 
 exports.movielist_get = (req, res, next) => {
 	Movie.find({}).exec((err, results) => {
@@ -22,6 +23,9 @@ exports.movieDetail_get = (req, res, next) => {
 			return next(err);
 		}
 
+		results.category = capitalizeFirstLetter(results.category);
+		results.director = capitalizeFirstLetter(results.director);
+
 		res.render("movie_detail", {
 			movie_detail: results,
 		});
@@ -41,6 +45,8 @@ exports.movie_create_post = [
 		.trim()
 		.isLength({ min: 1 })
 		.escape(),
+
+	body("category").trim().isLength({ min: 1 }).escape(),
 	body("year", "Year must include year")
 		.trim()
 		.isLength({ min: 4, max: 4 })
@@ -60,6 +66,7 @@ exports.movie_create_post = [
 		let movie = new Movie({
 			title: req.body.title,
 			director: req.body.director,
+			category: req.body.category,
 			year_made: req.body.year,
 			summary: req.body.summary,
 		});
