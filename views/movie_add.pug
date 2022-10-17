@@ -18,7 +18,10 @@ block content
       input.form-control(id = "year" for = "year" name = "year" type = "text" value=(undefined===movie ? '' : movie.year_made))
 
       label(for = "summary") Summary:
-      input.form-control(id = "summary" for  = "summary" name = "summary" type = "textarea" value=(undefined===movie ? '' : movie.summary))
+      input.form-control(id = "summary" for  = "summary" name = "summary" type = "text" value=(undefined===movie ? '' : movie.summary))
+
+      label(for = "cover") Cover Art URL (optional):
+      input.form-control(id = "cover" for  = "cover" name = "cover" type = "textarea" value=(undefined===movie ? '' : movie.cover))
       br
       button.btn.btn-primary(type='submit') Submit
 

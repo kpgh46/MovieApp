@@ -47,17 +47,22 @@ exports.movie_create_post = [
 		.isLength({ min: 1 })
 		.escape(),
 
-	body("category").trim().isLength({ min: 1 }).escape(),
+	body("category", "Must include Category")
+		.trim()
+		.isLength({ min: 1 })
+		.escape(),
 	body("year", "Year must include year")
 		.trim()
 		.isLength({ min: 4, max: 4 })
 		.isNumeric()
 		.withMessage("Year must be 4 digit number")
 		.escape(),
-	body("summary", "Please include Summary")
+	body("summary", "Must include Summary")
 		.trim()
-		.isLength({ max: 300 })
+		.isLength({ min: 1 })
 		.escape(),
+
+	body("cover").trim().optional({ checkFalsy: true }),
 
 	(req, res, next) => {
 		//grab the errors with built in validation
@@ -70,6 +75,7 @@ exports.movie_create_post = [
 			category: req.body.category,
 			year_made: req.body.year,
 			summary: req.body.summary,
+			cover: req.body.summary,
 		});
 
 		//if errors, render page with error messages

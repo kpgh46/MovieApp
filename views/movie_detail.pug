@@ -15,6 +15,8 @@ block content
     p
       a(href="#") Update Movie
 
-    img(src=movie_detail.cover)
+    if movie_detail.cover
+        img(src=movie_detail.cover)
+    
 
     
