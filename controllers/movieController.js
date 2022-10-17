@@ -15,6 +15,7 @@ exports.movielist_get = (req, res, next) => {
 	});
 };
 
+// find list of movies
 exports.movieDetail_get = (req, res, next) => {
 	let id = req.params.id;
 

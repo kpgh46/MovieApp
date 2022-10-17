@@ -8,3 +8,5 @@ let GenreSchema = new Schema({
 		maxLength: 100,
 	},
 });
+
+module.exports = mongoose.model("Category", GenreSchema);
