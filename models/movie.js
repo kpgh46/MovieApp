@@ -24,6 +24,9 @@ let MovieSchema = new Schema({
 	watched: {
 		type: Boolean,
 	},
+	cover: {
+		type: String,
+	},
 });
 
 MovieSchema.virtual("url").get(function () {
