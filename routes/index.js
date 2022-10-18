@@ -19,4 +19,6 @@ router.get("/categories/:id", categoryController.categories_movie_get);
 
 router.get("/detail/:id/movie_update", movieController.movie_update_get);
 
+router.post("/detail/:id/movie_update", movieController.movie_update_post);
+
 module.exports = router;
