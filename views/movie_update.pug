@@ -1,7 +1,8 @@
 extends layout
 
 block content
-  h1= title
+  h1= movie.title
+
 
   form(action="" method= "POST")
     div.form-group
@@ -23,10 +24,6 @@ block content
       label(for = "cover") Cover Art URL (optional):
       input.form-control(id = "cover" for  = "cover" name = "cover" type = "text" value=(undefined===movie ? '' : movie.cover))
       br
-      button.btn.btn-primary(type='submit') Submit
+      button.btn.btn-primary(type='submit') Update
 
-    if errors
-      ul
-        for error in errors
-          li!= error.msg
   

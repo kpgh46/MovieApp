@@ -75,7 +75,7 @@ exports.movie_create_post = [
 			category: req.body.category,
 			year_made: req.body.year,
 			summary: req.body.summary,
-			cover: req.body.summary,
+			cover: req.body.cover,
 		});
 
 		//if errors, render page with error messages
@@ -96,3 +96,25 @@ exports.movie_create_post = [
 		});
 	},
 ];
+
+exports.movie_update_get = (req, res, next) => {
+	Movie.findById(req.params.id).exec((err, results) => {
+		if (err) {
+			return next(err);
+		}
+
+		let currentMovie = {
+			id: results.id,
+			title: results.title,
+			director: results.director,
+			category: results.category,
+			year_made: results.year_made,
+			summary: results.summary,
+			cover: results.cover,
+		};
+
+		res.render("movie_update", {
+			movie: currentMovie,
+		});
+	});
+};

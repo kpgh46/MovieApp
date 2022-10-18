@@ -10,10 +10,10 @@ block content
     p= movie_detail.summary
 
     p
-      a(href="#") Delete Movie
+      a(href="") Delete Movie
 
     p
-      a(href="#") Update Movie
+      a(href=`${movie_detail.url}/movie_update`) Update Movie
 
     if movie_detail.cover
         img(src=movie_detail.cover)
