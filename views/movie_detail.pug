@@ -10,7 +10,7 @@ block content
     p= movie_detail.summary
 
     p
-      a(href="") Delete Movie
+      a(href= `${movie_detail.url}/movie_delete`) Delete Movie
 
     p
       a(href=`${movie_detail.url}/movie_update`) Update Movie

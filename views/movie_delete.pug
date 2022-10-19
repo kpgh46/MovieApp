@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1=`Are you sure you want to delete ${movie.title}?`
+
+  p Yes
+  p 
+    a(href=movie.url) No

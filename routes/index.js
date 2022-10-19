@@ -21,4 +21,6 @@ router.get("/detail/:id/movie_update", movieController.movie_update_get);
 
 router.post("/detail/:id/movie_update", movieController.movie_update_post);
 
+router.get("/detail/:id/movie_delete", movieController.movie_delete_get);
+
 module.exports = router;
