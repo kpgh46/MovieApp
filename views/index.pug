@@ -9,6 +9,8 @@ block content
       li
         a(href=movie.url) #{movie.title} 
         |  (#{movie.year_made})
+        img.list(src=movie.cover)
+
   
     else
       li There are no movies.
