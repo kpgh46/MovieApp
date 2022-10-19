@@ -3,6 +3,9 @@ extends layout
 block content
   h1=`Are you sure you want to delete ${movie.title}?`
 
-  p Yes
-  p 
-    a(href=movie.url) No
+  form(action= '' method = "POST") 
+    button.btn.btn-primary(type='submit') Yes
+    //-  button.btn.btn-primary 
+    //-     a(href=movie.url) No
+
+
