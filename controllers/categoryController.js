@@ -10,13 +10,15 @@ exports.categoriesList_get = (req, res, next) => {
 exports.categories_movie_get = (req, res, next) => {
 	let id = req.params.id;
 
-	Movie.find({ category: id }).exec((err, result) => {
-		if (err) {
-			return next(err);
+	Movie.find({ category: { $regex: id, $options: "i" } }).exec(
+		(err, result) => {
+			if (err) {
+				return next(err);
+			}
+			res.render("categories_movie", {
+				title: capitalizeFirstLetter(id),
+				movie_list: result,
+			});
 		}
-		res.render("categories_movie", {
-			title: capitalizeFirstLetter(id),
-			movie_list: result,
-		});
-	});
+	);
 };
