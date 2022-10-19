@@ -203,21 +203,11 @@ exports.movie_delete_get = (req, res, next) => {
 };
 
 exports.movie_delete_post = (req, res, next) => {
-	Movie.findById(req.params.id).exec((err, results) => {
+	Movie.findByIdAndRemove(req.params.id, (err) => {
 		if (err) {
 			return next(err);
 		}
 
-		let currentMovie = {
-			id: results.id,
-		};
-
-		Movie.findByIdAndRemove(currentMovie.id, (err) => {
-			if (err) {
-				return next(err);
-			}
-
-			res.redirect("/");
-		});
+		res.redirect("/");
 	});
 };
