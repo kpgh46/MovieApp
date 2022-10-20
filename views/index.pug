@@ -6,11 +6,9 @@ block content
   
   ul
     each movie in movie_list
+      a(href=movie.url)
+        img.list(src=movie.cover)
         
-          img.list(src=movie.cover)
-        
-
-  
     else
       li There are no movies.
 
