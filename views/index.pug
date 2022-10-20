@@ -7,11 +7,18 @@ block content
     
     div.d-flex.flex-wrap
       each movie in movie_list
-        div.img-container
-          a(href=movie.url)
-            img.list(src=movie.cover)
-          
-      else
-        li There are no movies.
+        if movie.cover
+          div.img-container
+            a(href=movie.url)
+              img.list(src=movie.cover)
+      
+    div Other:
+      ul
+        each movie in movie_list 
+          if !movie.cover
+            li 
+              a(href=movie.url) #{movie.title}
+
+
 
   

@@ -1,13 +1,13 @@
 extends layout
 
 block content
-  h1= title
+  h2= title
 
-    ul
+    ul.p-2
       each movie in movie_list
         li
           a(href=movie.url) #{movie.title} 
-        |  (#{movie.year_made})
+        
   
       else
         li There are no movies.
