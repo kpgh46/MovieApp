@@ -6,10 +6,9 @@ block content
   
   ul
     each movie in movie_list
-      li
-        a(href=movie.url) #{movie.title} 
-        |  (#{movie.year_made})
-        img.list(src=movie.cover)
+        
+          img.list(src=movie.cover)
+        
 
   
     else
