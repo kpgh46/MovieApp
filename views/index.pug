@@ -1,15 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p  #{title}
-  
-  ul
-    each movie in movie_list
-      a(href=movie.url)
-        img.list(src=movie.cover)
-        
-    else
-      li There are no movies.
+  div.d-flex.flex-column
+    h1= title
+
+    
+    div.d-flex.flex-wrap
+      each movie in movie_list
+        div.img-container
+          a(href=movie.url)
+            img.list(src=movie.cover)
+          
+      else
+        li There are no movies.
 
   

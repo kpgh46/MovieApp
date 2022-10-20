@@ -13,14 +13,16 @@ a {
   list-style: none;
 }
 
-img {
-  height: 50%;
-  width: 37%;
-}
 
 .list{
-  height: 40%;
-  width: 25%;
+  height: 100%;
+  width: 75%;
   border-radius: 10px;
   margin: 10px;
+  border: 1px solid red;
+}
+
+.img-container{
+  height: 300px;
+  width: 280px;
 }
