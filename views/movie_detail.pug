@@ -3,7 +3,7 @@ extends layout
 block content
   div.d-flex
     if movie_detail.cover
-        img(src=movie_detail.cover)
+        img.detail(src=movie_detail.cover)
     div.d-flex.flex-column.m-3
       h2= `${movie_detail.title} (${movie_detail.year_made})`
       p= `Directed by ${movie_detail.director}`

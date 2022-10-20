@@ -10,7 +10,7 @@ exports.movielist_get = (req, res, next) => {
 			return next(err);
 		}
 		res.render("index", {
-			title: "List of Movies",
+			title: "Highly Rated",
 			movie_list: results,
 		});
 	});
