@@ -2,7 +2,7 @@
   "name": "anotherlibrary",
   "version": "0.0.0",
   "engines": {
-    "node": "16.8."
+    "node": "16.8.0"
   },
   "private": true,
   "scripts": {
