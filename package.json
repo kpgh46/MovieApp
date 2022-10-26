@@ -1,6 +1,9 @@
 {
   "name": "anotherlibrary",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.8."
+  },
   "private": true,
   "scripts": {
     "start": "node ./bin/www",

@@ -12,12 +12,12 @@ block content
             a(href=movie.url)
               img.list(src=movie.cover)
       
-    div Other:
+    div Other Movies:
       ul
         each movie in movie_list 
           if !movie.cover
             li 
-              a(href=movie.url) #{movie.title}
+              a(href=movie.url) #{movie.title} (#{movie.year_made})
 
 
 
