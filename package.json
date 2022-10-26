@@ -1,6 +1,7 @@
 {
-  "name": "anotherlibrary",
+  "name": "inventoryApp",
   "version": "0.0.0",
+  "main": "app.js",
   "engines": {
     "node": "16.8.0"
   },
@@ -8,7 +9,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "serverstart": "DEBUG=express-anotherLibrary:* npm run devstart"
+    "serverstart": "DEBUG=express-inventoryApp:* npm run devstart"
   },
   "dependencies": {
     "async": "^3.2.4",
